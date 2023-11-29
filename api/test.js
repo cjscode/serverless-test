@@ -6,7 +6,7 @@ export default async function handler(request, response) {
   const hasTitle = searchParams.has('title');
   const title = hasTitle
     ? searchParams.get('title')?.slice(0, 100)
-    : 'My default title';
+    : Date.now()+"ms"+(Math.random()*10);
  
   return response.status(200).json({ title });
 }
